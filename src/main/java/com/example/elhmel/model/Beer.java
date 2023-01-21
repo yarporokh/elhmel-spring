@@ -33,7 +33,6 @@ public class Beer {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "beertype_id")
-    @NotNull
     private BeerType beerType;
 }
 
