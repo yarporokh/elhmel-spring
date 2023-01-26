@@ -31,7 +31,7 @@ public class Beer {
     @NotNull
     private Float alcohol;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "beertype_id")
     private BeerType beerType;
 }

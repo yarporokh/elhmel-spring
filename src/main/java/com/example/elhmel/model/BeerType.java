@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +23,12 @@ public class BeerType {
     @Column(unique = true)
     @NotNull
     private String type;
+
+    @OneToMany(mappedBy = "beerType")
+    private List<Beer> beerList;
+
+    @PreRemove
+    public void preRemove() {
+        beerList.forEach(beer -> beer.setBeerType(null));
+    }
 }
