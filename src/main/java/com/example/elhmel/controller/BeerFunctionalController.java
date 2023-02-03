@@ -51,18 +51,18 @@ public class BeerFunctionalController {
 
         beerService.save(beer);
 
-        return "redirect:/addbeer";
+        return "redirect:/admin/addbeer";
     }
 
     @PostMapping("/addbeertype")
     public String addBeerType(@RequestParam("newBeerTypeName") String newBeerTypeName) {
         beerService.saveNewBeerType(newBeerTypeName);
-        return "redirect:/addbeer";
+        return "redirect:/admin/addbeer";
     }
 
     @PostMapping("/deletebeertype")
     public String deleteBeerType(@RequestParam("beerType") BeerType beerType) {
         beerService.deleteBeerType(beerType);
-        return "redirect:/addbeer";
+        return "redirect:/admin/addbeer";
     }
 }

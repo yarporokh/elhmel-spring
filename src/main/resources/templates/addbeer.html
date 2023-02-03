@@ -17,25 +17,9 @@
 </head>
 <body>
 <div th:insert="navbar"></div>
-
-<!--<form th:method="POST" th:action="@{/addbeer}" th:object="${beer}">
-    <div class="container">
-        <label for="name">Name : </label>
-        <input type="text" th:field="*{name}" id="name" required>
-        <label for="description">Description : </label>
-        <input type="text" th:field="*{description}" id="description" required>
-        <label for="alcohol">Alcohol : </label>
-        <input type="number" th:field="*{alcohol}" step="0.1" id="alcohol" value="0.0" min="0.0" max="99.9" required>
-        <label for="beerType">Beer type : </label>
-        <input type="text" th:field="*{beerType}" id="beerType" required>
-
-
-        <button type="submit">Add</button>
-    </div>
-</form>-->
 <div>
     <center>
-        <form th:method="POST" th:action="@{/addbeer}">
+        <form th:method="POST" th:action="@{/admin/addbeer}">
             <div class="container">
                 <label for="name">Name : </label>
                 <br/>
@@ -63,7 +47,7 @@
 </div>
 <br/>
 <div>
-    <form th:method="POST" th:action="@{/addbeertype}">
+    <form th:method="POST" th:action="@{/admin/addbeertype}">
         <label for="newBeerTypeName">Create new beer type : </label>
         <input type="text" name="newBeerTypeName" id="newBeerTypeName" required>
         <button type="submit">Add</button>
@@ -71,7 +55,7 @@
 </div>
 <br/>
 <div>
-    <form th:method="POST" th:action="@{/deletebeertype}">
+    <form th:method="POST" th:action="@{/admin/deletebeertype}">
         <label for="deleteBeerType">Delete beer type : </label>
         <select name="beerType" id="deleteBeerType" >
             <option value="" disabled selected>Select</option>
