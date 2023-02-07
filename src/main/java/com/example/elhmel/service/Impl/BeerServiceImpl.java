@@ -59,4 +59,9 @@ public class BeerServiceImpl implements BeerService {
     public void deleteBeerType(BeerType beerType) {
         beerTypeRepository.delete(beerType);
     }
+
+    @Override
+    public void deleteBeer(Beer beer) {
+        beerRepository.delete(beer);
+    }
 }

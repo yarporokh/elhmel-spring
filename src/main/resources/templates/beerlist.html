@@ -26,6 +26,10 @@
             <p class="card-text" th:if="${beer.getBeerType() != null}" th:text="|Beer type: ${beer.getBeerType().getType()}|"/>
             <p class="card-text" th:unless="${beer.getBeerType() != null}" th:text="|Beer type: None|"/>
             <p class="card-text" th:text="${beer.getDescription().getDescription()}"/>
+            <form sec:authorize="hasAuthority('ADMIN')" th:method="POST" th:action="@{/deletebeer}">
+                <input type="hidden" name="beer" th:value="${beer.getId()}">
+                <button type="submit">Delete</button>
+            </form>
         </div>
     </div>
 </th:block>

@@ -2,6 +2,7 @@ package com.example.elhmel.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,7 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(unique = true)
+    @Email
     private String username;
 
     @Column

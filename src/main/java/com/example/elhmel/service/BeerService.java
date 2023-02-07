@@ -17,4 +17,5 @@ public interface BeerService {
     void saveNewBeerType(String name);
 
     void deleteBeerType(BeerType beerType);
+    void deleteBeer(Beer beer);
 }

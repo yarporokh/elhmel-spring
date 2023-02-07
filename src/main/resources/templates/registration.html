@@ -32,6 +32,9 @@
                 <button type="submit">Register</button>
             </div>
         </form>
+        <span class="alert alert-danger" role="alert" th:if="${registrationError != null}" th:text="Error">
+            Error
+        </span>
     </center>
 </div>
 </body>
