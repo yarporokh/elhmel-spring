@@ -1,0 +1,28 @@
+#spring.datasource.driverClassName=com.mysql.jdbc.Driver
+#spring.datasource.url=jdbc:mysql://localhost:3306/elhmel
+#spring.datasource.username=root
+#spring.datasource.password=root
+#spring.jpa.generate-ddl=true
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+#spring.jpa.properties.hibernate.show_sql=true
+#spring.security.oauth2.client.registration.google.client-id=1011803130587-1kqkgo0l9cb72rhs7hbj812rf9knnvc4.apps.googleusercontent.com
+#spring.security.oauth2.client.registration.google.client-secret=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
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/elhmel
+    driverClassName: com.mysql.jdbc.Driver
+    password: root
+  jpa:
+    generate-ddl: 'true'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: 'true'
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-secret: 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
+            client-id: 1011803130587-1kqkgo0l9cb72rhs7hbj812rf9knnvc4.apps.googleusercontent.com
