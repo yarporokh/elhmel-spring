@@ -28,6 +28,6 @@ public class ReviewBeerController {
     @PostMapping("/deletebeer")
     public String deleteBeer(@RequestParam Beer beer) {
         beerService.deleteBeer(beer);
-        return "redirect: /beerlist";
+        return "redirect:/beerlist";
     }
 }

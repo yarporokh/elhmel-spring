@@ -36,7 +36,6 @@ public class CustomOidcUserServiceImpl extends OidcUserService {
 
     private OidcUser processOidcUser(OidcUserRequest userRequest, OidcUser oidcUser) {
         Map<String, Object> authUserInfo = oidcUser.getAttributes();
-        System.out.println(authUserInfo);
 
         User user = userRepository.findByUsername((String) authUserInfo.get("email"));
         if (user == null) {
