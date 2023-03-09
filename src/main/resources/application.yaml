@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    url: jdbc:mysql://mysql-db:3306/elhmel
+    url: jdbc:mysql://mysql_db:3306/elhmel
     driverClassName: com.mysql.jdbc.Driver
     password: root
   jpa:

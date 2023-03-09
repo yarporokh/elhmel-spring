@@ -1,26 +1,23 @@
-version: '3'
+version: "3.8"
+
 services:
-  db:
-    image: mysql:latest
-    container_name: mysql-db
+  mysql_db:
+    container_name: mysql_db
+    image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: elhmel
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
     ports:
-      - "3306:3306"
-    restart: always
+      - "3307:3306"
+    restart: on-failure
 
-  app:
+  elhmel_app:
+    container_name: elhmel_app
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
-    container_name: 'elhmel-site'
     ports:
-      - 8080:8080
-    environment:
-      MYSQL_HOST: db
-    restart: always
-    links:
-      - db
+      - "8080:8080"
+    depends_on:
+      - mysql_db
+    restart: on-failure
